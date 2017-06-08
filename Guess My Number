@@ -1,0 +1,25 @@
+# In this problem, you'll create a program that guesses a secret number!
+# The program works as follows: you (the user) thinks of an integer between 0 (inclusive) and 100 (not inclusive).
+# The computer makes guesses, and you give it input - is its guess too high or too low?
+# Using bisection search, the computer will guess the user's secret number!
+
+low = 0
+high = 100
+mid = 50
+guess = 'Is your secret number '
+print('Please think of a number between 0 and 100!')
+print(guess + str(mid) + '?')
+result = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly.")
+while result != 'c':
+    if result == 'h':
+        high = mid
+        mid = (mid + low) // 2
+    elif result == 'l':
+        low = mid
+        mid = (mid + high) // 2
+    else:
+        print('Sorry, I did not understand your input.')
+    print(guess + str(mid) + '?')
+    result = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly.")
+if result == 'c':
+    print('Game over. Your secret number was:', mid)
