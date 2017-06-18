@@ -1,6 +1,6 @@
 # Implement a variation of the classic wordgame Hangman.
 
-
+# Problem 1
 def isWordGuessed(secretWord, lettersGuessed):
     '''
     secretWord: string, the word the user is guessing
@@ -13,6 +13,34 @@ def isWordGuessed(secretWord, lettersGuessed):
             return False
     return True
 
+# Problem 2
+def getGuessedWord(secretWord, lettersGuessed):
+    '''
+    secretWord: string, the word the user is guessing
+    lettersGuessed: list, what letters have been guessed so far
+    returns: string, comprised of letters and underscores that represents
+      what letters in secretWord have been guessed so far.
+    '''
+    result = ''
+    for i in secretWord:
+        if i in lettersGuessed:
+            result += i
+        else:
+            result += '_'
+    return result
+
+# Problem 3
+def getAvailableLetters(lettersGuessed):
+     '''
+    lettersGuessed: list, what letters have been guessed so far
+    returns: string, comprised of letters that represents what letters have not yet been guessed.
+    '''
+    import string
+    result = ''
+    for i in string.ascii_lowercase:
+        if i not in lettersGuessed:
+            result += i
+    return result
 
 #implement the function hangman, which takes one parameter - the secretWord the user is to guess. This starts up an interactive game of Hangman between the user and the computer.
 
