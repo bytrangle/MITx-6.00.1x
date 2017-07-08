@@ -1,4 +1,4 @@
-# Problem Set 1 - Word Scores
+# **Problem 1 - Word Scores**
 # Calculate the score for a single word. 
 # The function getWordScore should accept as input a string of lowercase letters (a word) and return the integer score for that word, using the game's scoring rules.
 def getWordScore(word, n):
@@ -9,3 +9,5 @@ def getWordScore(word, n):
     if len(word) == n:
         finalscore = finalscore + 50
     return finalscore
+
+# Problem 2 - Dealing with Hands
