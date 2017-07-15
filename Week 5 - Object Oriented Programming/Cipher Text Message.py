@@ -42,6 +42,7 @@ class CiphertextMessage(Message):
         return best_shift
     
 def decrypt_story():
-
-       cipherText = CiphertextMessage(get_story_string())
-        return cipherText.decrypt_message()
+    cipherText = CiphertextMessage(get_story_string())
+    return cipherText.decrypt_message()
+       
+        
